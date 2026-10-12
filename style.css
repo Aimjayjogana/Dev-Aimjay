@@ -146,3 +146,17 @@ nav a:hover { color: #2563eb; }
   #nav-menu ul{flex-direction:column}
   #nav-menu ul a{display:block;padding:15px 0}
 }
+.close-btn{
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:32px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  display:none;
+}
+
+@media (max-width:768px){
+  .close-btn{display:block}
+}

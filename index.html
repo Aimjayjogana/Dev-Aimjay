@@ -12,6 +12,7 @@
             <h1 class="logo">NOVA.</h1>
             <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
             <nav id="nav-menu">
+                <button class="close-btn" id="close-btn">&times;</button>
                 <ul>
                     <a href="#welcome">Home</a></li>
                     <a href="#me">About</a>
@@ -170,14 +171,22 @@
 <script>
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
+const closeBtn = document.getElementById('close-btn');
+
 hamburger.onclick = () => {
-  hamburger.classList.toggle('active');
-  navMenu.classList.toggle('active');
+  navMenu.classList.add('active');
+  hamburger.classList.add('active');
 }
+
+closeBtn.onclick = () => {
+  navMenu.classList.remove('active');
+  hamburger.classList.remove('active');
+}
+
 document.querySelectorAll('#nav-menu a').forEach(link => {
   link.onclick = () => {
-    hamburger.classList.remove('active');
     navMenu.classList.remove('active');
+    hamburger.classList.remove('active');
   }
 });
 </script>
