@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova</title>
-    <link rel="stylesheet"  q1` href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="container header-inner">
             <h1 class="logo">NOVA.</h1>
-            <nav>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            <nav id="nav-menu">
                 <ul>
                     <a href="#welcome">Home</a></li>
                     <a href="#me">About</a>
@@ -28,8 +29,8 @@
                     <h2>We Create <span><br>Digital Experience.<span></h2>
                     <p> NOVA Studio helps businesses and organizations build modern, beautiful and <br> user-friendly digital experiences</p>
                     <div class="cta">
-                        <a href="#" class="btn primary">Our Services</a>
-                        <a href="#" target="_blank" class="btn secondary">View projects</a>
+                        <a href="#Services" class="btn primary">Our Services</a>
+                        <a href="#Projects" target="_blank" class="btn secondary">View projects</a>
                     </div>
                 </div>
                 <div class="welcome-image">
@@ -43,7 +44,7 @@
                     <img src="images/aimjay.jpg" alt="Creative beach sunset with flowers representing digital ideas">
                 </div>
                 <div class="me">
-                    <h4 class="small-title">ABOUT NOVA →</h4>
+                    <h4 class="small-title">ABOUT NOVA </h4>
                     <h2 class="we">Ideas become digital<br>experiences.</h2>
                     <p class="desc">We are a creative digital studio focused on building websites and digital products that are simple, useful and visually engaging.</p>
                     <p class="desc">From the first idea to the final product, we combine creativity, design and technology to solve real problems.</p>
@@ -166,5 +167,19 @@
         </div>
     </div>
 </footer>
+<script>
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+hamburger.onclick = () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+}
+document.querySelectorAll('#nav-menu a').forEach(link => {
+  link.onclick = () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+  }
+});
+</script>
 </body>
 </html>

@@ -107,3 +107,42 @@ nav a:hover { color: #2563eb; }
   .welcome, .me-about, .services, .featured-work, .purpose-section, .contact-section { padding: 50px 0; }
   .welcome-image img, .me-image img { height: 280px; }
 }
+/* HAMBURGER */
+.hamburger{
+  display:none;
+  flex-direction:column;
+  justify-content:space-between;
+  width:28px;
+  height:20px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+.hamburger span{
+  height:3px;
+  width:100%;
+  background:#091630;
+  border-radius:3px;
+  transition:0.3s;
+}
+.hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,6px)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-6px)}
+
+@media (max-width:768px){
+  .hamburger{display:flex}
+  #nav-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:250px;
+    height:100vh;
+    background:#fff;
+    padding:80px 20px;
+    box-shadow:-5px 0 15px rgba(0,0,0,0.1);
+    transition:0.35s;
+  }
+  #nav-menu.active{right:0}
+  #nav-menu ul{flex-direction:column}
+  #nav-menu ul a{display:block;padding:15px 0}
+}
